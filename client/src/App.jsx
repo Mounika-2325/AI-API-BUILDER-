@@ -8,6 +8,7 @@ import ERDViewer from './components/ERDViewer';
 import APITester from './components/APITester';
 import ApiKeyModal from './components/ApiKeyModal';
 import ExportModal from './components/ExportModal';
+import { API_BASE_URL } from './config';
 
 export default function App() {
   const [promptInput, setPromptInput] = useState('');
@@ -71,7 +72,7 @@ export default function App() {
     }, 450);
 
     try {
-      const res = await fetch('/api/generate', {
+      const res = await fetch(`${API_BASE_URL}/api/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

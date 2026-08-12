@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Play, Send, Clock, CheckCircle2, AlertCircle, RefreshCw } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function APITester({ simulationId, endpoints, tables }) {
   const [selectedEndpoint, setSelectedEndpoint] = useState(endpoints?.[0] || null);
@@ -45,7 +46,7 @@ export default function APITester({ simulationId, endpoints, tables }) {
     }
 
     try {
-      const res = await fetch('/api/simulate', {
+      const res = await fetch(`${API_BASE_URL}/api/simulate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

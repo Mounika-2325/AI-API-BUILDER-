@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Download, X, FileCode, FileText, Archive, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { API_BASE_URL } from '../config';
 
 export default function ExportModal({ isOpen, onClose, architecture }) {
   const [isZipping, setIsZipping] = useState(false);
@@ -32,7 +33,7 @@ export default function ExportModal({ isOpen, onClose, architecture }) {
   const handleExportZip = async () => {
     setIsZipping(true);
     try {
-      const res = await fetch('/api/export-project', {
+      const res = await fetch(`${API_BASE_URL}/api/export-project`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ architecture })
