@@ -1,0 +1,18 @@
+{
+  "name": "ai-api-builder-server",
+  "version": "1.0.0",
+  "description": "Backend API generator server for AI API Builder",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "archiver": "^7.0.1",
+    "js-yaml": "^4.1.0"
+  }
+}
