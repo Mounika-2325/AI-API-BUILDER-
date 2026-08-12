@@ -37,6 +37,8 @@ jobs:
           npm install
 
       - name: Build Vite Application
+      env:
+      VITE_API_URL:{{vars.VITE_API_URL}}
         run: |
           cd client
           npm run build
